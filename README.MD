@@ -1,6 +1,6 @@
 # Simulador de Tráfico Inteligente
 
-__Integrantes:__ Maria Estefany Piedrahita Monsalve - Simon 
+__Integrantes:__ Maria Estefany Piedrahita Monsalve - Simon Martíez Ruiz
 
 __Curso:__ Fundamentos de programación
 
