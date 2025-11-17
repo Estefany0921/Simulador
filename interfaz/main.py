@@ -10,7 +10,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 def main():
-    st.title("Simulador de Tráfico (Versión Simple)")
+    st.title("Simulador de Tráfico")
     tiempo = st.slider("Duración de la simulación (s)", 600, 3600, 1800, 300)
     tasa = st.slider("Probabilidad de entrada de vehículos", 0.1, 0.9, 0.3, 0.05)
 
