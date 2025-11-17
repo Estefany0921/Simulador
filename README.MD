@@ -24,7 +24,7 @@ Simulador
 
 Desde el enfoque CDIO (Concebir–Diseñar–Implementar–Operar), el proyecto se estructura en cuatro momentos claves:
 
-- **Concebir (C):** Se identificó el problema de congestión asociado al diseño semafórico, enfocándonos en simular de forma sencilla cómo varía el tiempo de recorrido y el número de paradas por vehículo según el tipo de controlador.
+- **Concebir (C):** La congestión vehicular representa un fenómeno crítico en la gestión del tráfico urbano. Este simulador tiene como propósito modelar el comportamiento de vehículos en una carretera, contrastando dos tipos de controladores semafóricos: control fijo y ola verde.
 
 - **Diseñar (D):** Se desarrolló una estructura modular compuesta por dos carpetas principales:
   - `funciones/`: donde se encuentra el archivo `generar.py` que contiene la lógica de la simulación (funciones `generar_vehiculos` y `simular`).
@@ -34,11 +34,7 @@ Desde el enfoque CDIO (Concebir–Diseñar–Implementar–Operar), el proyecto 
 
 - **Implementar (I):** El núcleo del proyecto es un algoritmo de simulación discreta. En cada unidad de tiempo (1 segundo), se evalúa la entrada de nuevos vehículos y se actualiza su posición dependiendo de si se encuentran con un semáforo en rojo o verde. Se registran métricas como el tiempo total de viaje y la cantidad de paradas realizadas.
 
-- **Operar (O):** La operación del sistema permite analizar de forma clara y visual:
-  - El tiempo promedio de viaje por cada tipo de controlador.
-  - La cantidad promedio de paradas.
-  - Histogramas comparativos que facilitan el análisis visual del rendimiento de ambas estrategias.
-
+- **Operar (O):** La operación del sistema ofrece una forma clara y visual de comprender cómo se comportan los vehículos frente a diferentes tipos de controladores semafóricos. A través del análisis del tiempo promedio de viaje y la cantidad de paradas que realiza cada vehículo, se puede evidenciar el impacto del tipo de semaforización en la eficiencia del flujo vehicular. Además, los histogramas generados permiten comparar de manera intuitiva el rendimiento de las estrategias “controlador fijo” y “ola verde”, brindando a los usuarios una herramienta útil para la toma de decisiones basadas en datos.
 ## Código y Reproducibilidad
 
 El repositorio está organizado para facilitar su ejecución y comprensión. Contiene:
@@ -57,26 +53,11 @@ La aplicación cuenta con una interfaz sencilla pero potente, que incluye:
 
 Además, el sistema es fácilmente ampliable. Se podrían agregar botones para descargar los datos (`st.download_button`), o módulos para registrar eventos específicos y analizar casos individuales.
 
-## Posibilidades de Análisis de Anomalías
 
-Aunque aún no se ha implementado una metodología formal para la detección de anomalías, el sistema podría adaptarse fácilmente para:
-- Identificar vehículos con tiempos de viaje anormalmente altos.
-- Detectar congestiones en puntos específicos de la carretera.
+## Validaciones Implementadas
 
-Se sugiere aplicar filtros como IQR (Interquartile Range) o puntuaciones Z para destacar valores atípicos directamente en los gráficos.
+Durante el desarrollo del simulador, se incorporaron validaciones esenciales para garantizar la robustez del sistema y prevenir comportamientos inesperados. Por ejemplo, se verificó que los parámetros de entrada como el tiempo total de simulación y la tasa de generación de vehículos fueran del tipo y rango adecuado antes de ejecutar los algoritmos. Esto no solo mejora la confiabilidad del programa, sino que también permite ofrecer retroalimentación inmediata al usuario si introduce valores erróneos o inconsistentes. Este enfoque de validación fortalece la estabilidad general del simulador y lo hace más seguro para futuras ampliaciones o integraciones con sistemas más complejos.
 
-## Comunicación de Alertas
+## Conclusión
 
-Pensando en una posible aplicación real del sistema, este simulador podría integrarse en un sistema de alertas tempranas para detectar congestión crítica. Por ejemplo:
-- Emitir alertas cuando el tiempo promedio de viaje excede un umbral predefinido.
-- Registrar eventos de vehículos con más de un número determinado de paradas.
-- Exportar automáticamente registros de tráfico anormal para revisión por autoridades de movilidad.
-
-## Argumentación Profesional
-
-Este proyecto demuestra un desarrollo completo desde el análisis del problema hasta la presentación de resultados:
-
-- Se identificó con claridad el impacto del tipo de semáforo en la congestión.
-- Se diseñó un modelo limpio y modular, con decisiones técnicas fundamentadas.
-- La implementación es funcional, interactiva, reproducible y extensible.
-- La presentación es clara, amigable y pensada para usuarios técnicos y no técnicos.
+A lo largo del desarrollo de este proyecto se logró identificar con claridad cómo el tipo de semáforo puede influir directamente en los niveles de congestión vehicular, lo cual permitió orientar adecuadamente el enfoque del simulador. A partir de esta problemática, se diseñó una solución computacional estructurada con un modelo modular, claro y limpio, donde cada decisión técnica tomada respondió a criterios de eficiencia, claridad y extensibilidad. La implementación final resultó ser completamente funcional y ofrece una experiencia interactiva e intuitiva para el usuario, garantizando a su vez la posibilidad de reproducir y adaptar el código según nuevas necesidades. Finalmente, la presentación general del simulador, con su interfaz amigable y visualizaciones claras, fue pensada para facilitar la comprensión tanto de usuarios técnicos como no técnicos, promoviendo un acceso inclusivo al análisis del comportamiento del tráfico urbano.
