@@ -3,15 +3,14 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
-# ================== PARÁMETROS ==================
-V_MAX = 13.9  # Velocidad máxima de los vehículos (m/s)
-ROAD_END = 1000  # Longitud de la carretera (m)
-DT = 1  # Paso de tiempo (s)
-CYCLE = 60  # Duración del ciclo del semáforo (s)
+V_MAX = 13.9  # Velocidad máxima de los vehículos
+ROAD_END = 1000  # Longitud de la carretera 
+DT = 1  # Paso de tiempo 
+CYCLE = 60  # Duración del ciclo del semáforo 
 GREEN = 30  # Tiempo en verde
 
 
-# Generar eventos de entrada de vehículos
+
 def generar_vehiculos(tiempo_total, tasa):
     # Validaciones de entrada
     if not isinstance(tiempo_total, int) or tiempo_total <= 0:
